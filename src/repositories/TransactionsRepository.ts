@@ -26,13 +26,16 @@ class TransactionsRepository {
   }
 
 
+  // Listar todas as transações
   public all(): Transaction[] {
 
     return this.transactions;
   }
 
 
+  // Calcular o balanço
   public getBalance(): Balance {
+
     const balance = this.transactions.reduce(
       (accumulator: Balance, transaction: Transaction) => {
         switch (transaction.type) {

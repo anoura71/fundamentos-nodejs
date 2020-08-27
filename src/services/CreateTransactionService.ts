@@ -29,7 +29,6 @@ class CreateTransactionService {
 
     // Não permite que uma retirada gere um saldo negativo
     const { total } = this.transactionsRepository.getBalance();
-
     if (type === 'outcome' && value > total) {
       throw new Error('Unable to create an outcome transaction without a valid balance.');
     }

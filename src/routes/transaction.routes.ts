@@ -9,6 +9,7 @@ const transactionRouter = Router();
 const transactionsRepository = new TransactionsRepository();
 
 
+// Listar transações + balanço
 transactionRouter.get('/', (request, response) => {
   try {
     const transactions = transactionsRepository.all();
@@ -24,6 +25,7 @@ transactionRouter.get('/', (request, response) => {
 });
 
 
+// Criar nova transação
 transactionRouter.post('/', (request, response) => {
   try {
     const { title, value, type } = request.body;
